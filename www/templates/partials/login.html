@@ -1,0 +1,20 @@
+<div class="popup-fade" id="loginPopup" title="Login">
+    <div class="panel-body">
+      <form name="login" ng-model="user" ng-submit="login(user)" class="list">
+
+        <label class="item item-input">
+          <i class="ion-android-person"></i>&nbsp;&nbsp;
+          <input type="text" ng-model="user.name" placeholder="Username">
+        </label>
+        <label class="item item-input">
+          <i class="ion-email"></i>&nbsp;&nbsp;
+          <input type="text" ng-model="user.email" placeholder="Email">
+        </label>
+        <label class="item item-input">
+          <i class="ion-unlocked"></i>&nbsp;&nbsp;
+          <input type="password" ng-model="user.password" placeholder="Password">
+        </label>
+
+      </form>
+    </div>
+</div>
