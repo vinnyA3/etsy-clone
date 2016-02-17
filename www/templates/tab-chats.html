@@ -1,17 +1,25 @@
 <ion-view view-title="Chats">
   <ion-content>
     <ion-list>
-      <div class="list">
+      <form ng-submit="submit(product)" class="list">
         <label class="item item-input">
-          <input type="text" placeholder="First Name">
+          <input type="text" ng-model="product.name" placeholder="Product Name">
         </label>
         <label class="item item-input">
-          <input type="text" placeholder="Last Name">
+          <input type="text" ng-model="product.tagline" placeholder="Tagline">
         </label>
         <label class="item item-input">
-          <textarea placeholder="Comments"></textarea>
+          <textarea ng-model="product.description" placeholder="Description"></textarea>
         </label>
-      </div>
+        <label class="item item-input">
+          <textarea ng-model="product.price" placeholder="Price"></textarea>
+        </label>
+        <br>
+        <input type="image" style="width:200px; height:auto; display:block; margin:0 auto;"src="img/max.png">
+        <!-- Submit button -->
+        <br>
+        <input type="submit" class="button button-block button-balanced" value="Submit">
+      </form>
       <!--<ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
         <img ng-src="{{chat.face}}">
         <h2>{{chat.name}}</h2>
