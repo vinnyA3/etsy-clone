@@ -20,7 +20,7 @@ angular.module('starter.controllers', [])
   };
 
   //dummy var for image
-  $scope.image = '../img/max.png';
+  $scope.image = 'http://static.tumblr.com/1ndm60x/TERm1czxv/813925-sonic21_large.png';
   $scope.submit = function(product){
     console.log('button was clicked', product);
     Products.saveProduct(product,$scope.image);
