@@ -22,6 +22,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','f
     }
   });
 })
+//config: firstbase db url 
 .constant('FURL','https://eclone.firebaseio.com/')
 
 .config(function($stateProvider, $urlRouterProvider) {
