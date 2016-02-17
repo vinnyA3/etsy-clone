@@ -1,1 +1,14 @@
 /* Empty. Add your own CSS if you like */
+.login-page-bg{
+  background: lightsalmon;
+}
+.buffer{
+  height:160px;
+}
+.login-page-bg-login{
+  width:70%; background-color:transparent; border:1px solid white; border-radius:50%;
+}
+  .login-page-bg-login > i{
+    font-size: 50px;
+    color: #fff;
+  }
