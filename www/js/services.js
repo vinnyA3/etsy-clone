@@ -65,7 +65,7 @@ angular.module('starter.services', ['firebase'])
       name: product.name,
       tagline: product.tagline,
       description: product.description,
-      price: product.description,
+      price: product.price,
       image: image
     };
 
