@@ -10,6 +10,8 @@ angular.module('starter', [
   'dashController',
   'chatsController',
   'loginController',
+  'accountsController',
+  'authService',
   'Products',
   'firebase'
 ])
@@ -87,7 +89,7 @@ angular.module('starter', [
     views: {
       'tab-account': {
         templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+        controller: 'AccountsCtrl'
       }
     }
   });
