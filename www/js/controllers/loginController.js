@@ -1,37 +1,48 @@
-angular.module('loginController',[])
-  .controller('LoginCtrl', function($scope, $ionicPopup){
+angular.module('loginController',['authService'])
+  .controller('LoginCtrl', function($scope, $state, $ionicPopup, Auth){
     $scope.login = function(){
-      console.log('cool@');
+      console.log('cool!');
 
-      $scope.data = {};
+      $scope.user = {};
 
       // An elaborate, custom popup
       var myPopup = $ionicPopup.show({
         templateUrl: 'templates/partials/login.html',
-        title: 'Enter Wi-Fi Password',
-        subTitle: 'Please use normal things',
+        title: 'SignIn',
         scope: $scope,
         buttons: [
-          { text: 'Cancel' },
           {
-            text: '<b>Save</b>',
-            type: 'button-positive',
-            onTap: function(e) {
-              if (!$scope.data.wifi) {
-                //don't allow the user to close unless he enters wifi password
-                e.preventDefault();
-              } else {
-                return $scope.data.wifi;
-              }
+            text: '<b>Login</b>',
+            type: 'button-energized',
+            onTap: function(user) {
+                user = $scope.user;
+                //log user in and send them to the dashboard
+                Auth.login(user)
+                  .then(function(){
+                      $state.go('tab.dash');
+                  })
+                  .catch(function(err){
+                    console.log('Error! .. ' + err);
+                  });
+            }
+          },
+          {
+            text: '<b>Register</b>',
+            type: 'button-calm',
+            onTap: function(user) {
+                user = $scope.user;
+                Auth.register(user)
+                  .then(function(){
+                    console.log('user was registered successfully!');
+                    $state.go('tab.dash');
+                  })
+                  .catch(function(err){
+                    console.log('error....' + err);
+                  });
             }
           }
         ]
       });
-
-      myPopup.then(function(res) {
-        console.log('Tapped!', res);
-      });
-
 
      };
 
